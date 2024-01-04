@@ -1,0 +1,14 @@
+---
+import { getI18n } from '../i18n/index.ts'
+const { currentLocale = "es" } = Astro
+const i18n = getI18n({currentLocale})
+---
+<section class="text-xl text-left px-20 max-w-[60ch] text-pretty mx-auto my-24 text-white">
+  <img src="/logo.png" alt="Logo de los Esland" class="w-16 h-auto m-auto">
+  <h1 class="text-5xl font-semibold text-center text-wrap mx-auto mb-10 tracking-wide">
+    {i18n.INTRO_TITLE}
+  </h1>
+  <p set:html={i18n.INTRO_DESCRIPTION_1}></p>
+  <p set:html={i18n.INTRO_DESCRIPTION_2}></p>
+  <p set:html={i18n.INTRO_DESCRIPTION_3}></p>
+</section>
