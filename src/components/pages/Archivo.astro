@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import HeroContainer from "../HeroContainer.astro"
+import { getI18n } from '../../i18n/index.ts'
+import Button from "../Button.astro"
+import Numeros from "../Numeros.astro"
+import Gallery from "../Gallery.astro"
+
+const { currentLocale = "es" } = Astro
+const i18n = getI18n({ currentLocale })
+---
+
+<Layout title="Archivo" description="Página de archivo">
+  <HeroContainer img="/archivo-background.webp">
+    <h1 class="lg:text-6xl text-4xl text-center uppercase mb-20 font-tomaso tracking-widest">{i18n.ARCHIVO.HERO_TITLE}</h1>
+    <Button
+        class="md:text-sm lg:text-base md:py-2"
+        url="https://www.youtube.com/watch?v=1YmpPrqKP-g"
+      >
+        {i18n.ARCHIVO.HERO_BUTTON}
+      </Button>
+  </HeroContainer>
+  <main>
+    <Gallery />
+    <Numeros />
+  </main>
+</Layout>
